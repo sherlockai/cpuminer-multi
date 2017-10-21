@@ -115,10 +115,10 @@ if ARCH_x86_64
    cpuminer_SOURCES += asm/sha2-x64.S asm/scrypt-x64.S asm/aesb-x64.S
 endif
 if ARCH_ARM
-   cpuminer_SOURCES += asm/sha2-arm.S asm/scrypt-arm.S
+   cpuminer_SOURCES += asm/sha2-arm.S asm/scrypt-arm.S asm/aesb-arm.S
 endif
 else
-   disable_flags += -DNOASM
+   cpuminer_SOURCES += asm/sha2-arm.S asm/scrypt-arm.S asm/aesb-arm.S
 endif
 
 if HAVE_WINDOWS
